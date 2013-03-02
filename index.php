@@ -187,7 +187,7 @@ if ($row['categoria']=="social")
                    </ul>
             </div>
            
-		<a href="#page1" data-transition="slide" data-theme="b" data-role="button" data-icon="back">Volver</a>
+		<a href="#page1" data-transition="slide" data-theme="c" data-role="button" data-icon="back">Volver</a>
 	    </div>
         
      <!-- Alta salud -->
@@ -240,7 +240,7 @@ if ($row['categoria']=="social")
                     <input type="hidden" value="salud" name="categoria" />
                 </form>
             </div>
-            <a href="#salud" data-transition="slide" data-theme="b" data-role="button" data-icon="back">Volver</a>
+            <a href="#salud" data-transition="slide" data-theme="c" data-role="button" data-icon="back">Volver</a>
 	  
         </div>
    
@@ -260,8 +260,8 @@ if ($row['categoria']=="social")
         echo'        <h3>                    Descripción                </h3>';
         echo '<p>' . utf8_encode($row['problema']) . '</p>';
         echo '<small>A ' . $row['apoyos'] . ' personas le importa este proyecto, ¿y a ti?</small>';
-        echo '        <form action="importa.php"><input type="hidden" name="id" value="' . $row['id'] . '" /><input type="submit" data-icon="star" data-iconpos="left" value="¡Me importa!" /></form>';
-        echo '        <a data-role="button" data-theme="b" href="#page1" data-icon="back" data-iconpos="left">Volver</a></div></div> ';   
+        echo '        <form action="importa.php"><input type="hidden" name="id" value="' . $row['id'] . '" /><input type="submit" data-icon="star" data-iconpos="left" value="¡Me importa!" data-theme="b"/></form><br />';
+        echo '        <a data-role="button" data-theme="c" href="#page1" data-icon="back" data-iconpos="left">Volver</a></div></div> ';   
         
         }
         
@@ -306,12 +306,13 @@ if ($row['categoria']=="social")
                    </ul>
             </div>
            
-		<a href="#page1" data-transition="slide" data-theme="b" data-role="button" data-icon="back">Volver</a>
+		<a href="#page1" data-transition="slide" data-theme="c" data-role="button" data-icon="back">Volver</a>
 	    </div>
         
      <!-- Alta  -->
      
      <div data-role="page" id="altaanimales">
+     
             <div data-role="content">
             <div class="ui-grid-a">
                     <div class="ui-block-a">
@@ -325,9 +326,9 @@ if ($row['categoria']=="social")
                         </h1>
                     </div>
                 </div>
-                <h5>
+                <h4>
                     Divulga el problema que a ti te preocupa
-                </h5>
+                </h4>
                 <form action="altaproblema.php" data-rel="external">
                     <div data-role="fieldcontain">
                         <fieldset data-role="controlgroup">
@@ -359,7 +360,11 @@ if ($row['categoria']=="social")
                     <input type="hidden" value="animales" name="categoria" />
                 </form>
             </div>
-            <a href="#animales" data-transition="slide" data-theme="b" data-role="button" data-icon="back">Volver</a>
+            
+            
+                        
+            
+            <a href="#animales" data-transition="slide" data-theme="c" data-role="button" data-icon="back">Volver</a>
 	  
         </div>
 
@@ -406,7 +411,7 @@ if ($row['categoria']=="social")
                    </ul>
             </div>
            
-		<a href="#page1" data-transition="slide" data-theme="b" data-role="button" data-icon="back">Volver</a>
+		<a href="#page1" data-transition="slide" data-theme="c" data-role="button" data-icon="back">Volver</a>
 	    </div>
         
      <!-- Alta  -->
@@ -459,7 +464,7 @@ if ($row['categoria']=="social")
                     <input type="hidden" value="desarrollo" name="categoria" />
                 </form>
             </div>
-            <a href="#desarrollo" data-transition="slide" data-theme="b" data-role="button" data-icon="back">Volver</a>
+            <a href="#desarrollo" data-transition="slide" data-theme="c" data-role="button" data-icon="back">Volver</a>
 	  
         </div>
 
@@ -507,7 +512,7 @@ if ($row['categoria']=="social")
                    </ul>
             </div>
            
-		<a href="#page1" data-transition="slide" data-theme="b" data-role="button" data-icon="back">Volver</a>
+		<a href="#page1" data-transition="slide" data-theme="c" data-role="button" data-icon="back">Volver</a>
 	    </div>
         
      <!-- Alta  -->
@@ -560,7 +565,7 @@ if ($row['categoria']=="social")
                     <input type="hidden" value="social" name="categoria" />
                 </form>
             </div>
-            <a href="#social" data-transition="slide" data-theme="b" data-role="button" data-icon="back">Volver</a>
+            <a href="#social" data-transition="slide" data-theme="c" data-role="button" data-icon="back">Volver</a>
 	  
         </div>
   
@@ -604,7 +609,7 @@ if ($row['categoria']=="social")
                    </ul>
             </div>
            
-		<a href="#page1" data-transition="slide" data-theme="b" data-role="button" data-icon="back">Volver</a>
+		<a href="#page1" data-transition="slide" data-theme="c" data-role="button" data-icon="back">Volver</a>
 	    </div>
         
      <!-- Alta  -->
@@ -657,7 +662,7 @@ if ($row['categoria']=="social")
                     <input type="hidden" value="educacion" name="categoria" />
                 </form>
             </div>
-            <a href="#educacion" data-transition="slide" data-theme="b" data-role="button" data-icon="back">Volver</a>
+            <a href="#educacion" data-transition="slide" data-theme="c" data-role="button" data-icon="back">Volver</a>
 	  
         </div>
   
@@ -702,7 +707,7 @@ if ($row['categoria']=="social")
                    </ul>
             </div>
            
-		<a href="#page1" data-transition="slide" data-theme="b" data-role="button" data-icon="back">Volver</a>
+		<a href="#page1" data-transition="slide" data-theme="c" data-role="button" data-icon="back">Volver</a>
 	    </div>
         
      <!-- Alta  -->
@@ -755,7 +760,7 @@ if ($row['categoria']=="social")
                     <input type="hidden" value="medioambiente" name="categoria" />
                 </form>
             </div>
-            <a href="#medioambiente" data-transition="slide" data-theme="b" data-role="button" data-icon="back">Volver</a>
+            <a href="#medioambiente" data-transition="slide" data-theme="c" data-role="button" data-icon="back">Volver</a>
 	  
         </div>
   
