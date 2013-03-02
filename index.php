@@ -32,8 +32,8 @@ if ($row['categoria']=="medioambiente")
   }
 if ($row['categoria']=="animales")
   {
-    $eti = "H";
-    $color = red;
+    $eti = "A";
+    $color = orange;
   }
 if ($row['categoria']=="social")
   {
@@ -170,7 +170,7 @@ if ($row['categoria']=="social")
                 <a data-role="button" href="#altasalud" data-icon="add" data-theme="a">
                     Dinos que te preocupa
                 </a>
-                <h4><center>o apoya a estos retos</center></h4>
+                <h4><center>o apoya a estos retos:</center></h4>
                 <ul data-role="listview" data-divider-theme="b" data-inset="true">
                     
                    
@@ -289,7 +289,7 @@ if ($row['categoria']=="social")
                 <a data-role="button" href="#altaanimales" data-theme="a" data-icon="add">
                     Dinos que te preocupa
                 </a>
-                <h4><center>o apoya a estos retos</center></h4>
+                <h4><center>o apoya a estos retos:</center></h4>
                 <ul data-role="listview" data-divider-theme="b" data-inset="true">
                     
                    
@@ -389,7 +389,7 @@ if ($row['categoria']=="social")
                 <a data-role="button" href="#altadesarrollo" data-theme="a" data-icon="add">
                     Dinos que te preocupa
                 </a>
-                                <h4><center>o apoya a estos retos</center></h4>
+                                <h4><center>o apoya a estos retos:</center></h4>
 
                 <ul data-role="listview" data-divider-theme="b" data-inset="true">
                                     
@@ -489,7 +489,7 @@ if ($row['categoria']=="social")
                 <a data-role="button" href="#altasocial" data-theme="a" data-icon="add">
                     Dinos que te preocupa
                 </a>
-                                <h4><center>o apoya a estos retos</center></h4>
+                                <h4><center>o apoya a estos retos:</center></h4>
 
                 <ul data-role="listview" data-divider-theme="b" data-inset="true">
                     
@@ -587,7 +587,7 @@ if ($row['categoria']=="social")
                 <a data-role="button" href="#altaeducacion" data-theme="a" data-icon="add">
                     Dinos que te preocupa
                 </a>
-                                <h4><center>o apoya a estos retos</center></h4>
+                                <h4><center>o apoya a estos retos:</center></h4>
 
                 <ul data-role="listview" data-divider-theme="b" data-inset="true">
                                       
@@ -684,7 +684,7 @@ if ($row['categoria']=="social")
                 <a data-role="button" href="#altamedioambiente" data-theme="a" data-icon="add">
                     Dinos que te preocupa
                 </a>
-                                <h4><center>o apoya a estos retos</center></h4>
+                                <h4><center>o apoya a estos retos:</center></h4>
 
                 <ul data-role="listview" data-divider-theme="b" data-inset="true">
                    
