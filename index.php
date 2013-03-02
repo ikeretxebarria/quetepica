@@ -2,7 +2,48 @@
 <html>
 <?php
 include("dbconnect.php");
+$con = mysql_query("select * from problemas");
+$markas = "";
+while($row=mysql_fetch_array($con))
+{
+if ($row['categoria']=="salud")
+  {
+    $eti = "H";
+    $color = red;
+  }
 
+if ($row['categoria']=="educacion")
+  {
+    $eti = "E";
+    $color = blue;
+  
+  
+  }
+  
+if ($row['categoria']=="desarrollo")
+  {
+    $eti = "D";
+    $color = yellow;
+  }
+if ($row['categoria']=="medioambiente")
+  {
+    $eti = "M";
+    $color = green;
+  }
+if ($row['categoria']=="animales")
+  {
+    $eti = "H";
+    $color = red;
+  }
+if ($row['categoria']=="social")
+  {
+    $eti = "S";
+    $color = magenta;
+   
+  }
+ $markas = $markas . "&amp;markers=color:" . $color . "%7Ccolor:" . $color . "%7Clabel:" . $eti . "%7C" . $row['localizacion'];
+
+}
 ?>
     <head>
         <meta charset="utf-8" />
@@ -36,7 +77,7 @@ include("dbconnect.php");
            function muestra(objeto)
            {
             
-            document.getElementById("mapa").innerHTML = "<img src='https://maps.googleapis.com/maps/api/staticmap?center=" + objeto.coords.latitude + "," + objeto.coords.longitude + "&amp;zoom=14&amp;size=288x120&amp;markers=Bilbao, Bizkaia&amp;sensor=false&amp;key=AIzaSyBmH76Ojg_3oiRAJaIx6EMk0hW57LyaBWM' width='288' height='120'  />";
+            document.getElementById("mapa").innerHTML = "<img src='https://maps.googleapis.com/maps/api/staticmap?center=" + objeto.coords.latitude + "," + objeto.coords.longitude + "&amp;zoom=3&amp;size=288x120<?php echo $markas ?>&amp;sensor=false&amp;key=AIzaSyBmH76Ojg_3oiRAJaIx6EMk0hW57LyaBWM' width='288' height='120'  />";
            }
            
          </script>
@@ -50,7 +91,7 @@ include("dbconnect.php");
                 <div style="">
                     <img style="width: 40%" src="https://www.flipover.org/assets/flipover_logo_header.png" />
                 </div>
-                <div id="mapa"><img src="https://maps.googleapis.com/maps/api/staticmap?center=Bilbao, Spain&amp;zoom=14&amp;size=288x120&amp;markers=Madison, WI&amp;sensor=false&amp;key=AIzaSyBmH76Ojg_3oiRAJaIx6EMk0hW57LyaBWM" width="288" height="120" /></div>
+                <div id="mapa"><img src="https://maps.googleapis.com/maps/api/staticmap?center=Bilbao, Spain&amp;zoom=3&amp;size=288x120&amp;markers=Madison, WI&amp;sensor=false&amp;key=AIzaSyBmH76Ojg_3oiRAJaIx6EMk0hW57LyaBWM" width="288" height="120" /></div>
                 <ul data-role="listview" data-divider-theme="b" data-inset="true">
                     
                    <li data-theme="c">
@@ -129,7 +170,7 @@ include("dbconnect.php");
                 <a data-role="button" href="#altasalud" data-icon="add" data-theme="a">
                     Dinos que te preocupa
                 </a>
-                <h2><center>o apoya a los retos que te preocupan</center></h2>
+                <h4><center>o apoya a estos retos</center></h4>
                 <ul data-role="listview" data-divider-theme="b" data-inset="true">
                     
                    
@@ -245,13 +286,12 @@ include("dbconnect.php");
                         </div>
                     </div>
                                     </div>
-                <a data-role="button" href="#altaanimales">
+                <a data-role="button" href="#altaanimales" data-theme="a" data-icon="add">
                     Dinos que te preocupa
                 </a>
+                <h4><center>o apoya a estos retos</center></h4>
                 <ul data-role="listview" data-divider-theme="b" data-inset="true">
-                    <li data-role="list-divider" role="heading">
-                        Apoya a los retos que te preocupan
-                    </li>
+                    
                    
                    
                    <?php
@@ -346,14 +386,13 @@ include("dbconnect.php");
                         </div>
                     </div>
                                     </div>
-                <a data-role="button" href="#altadesarrollo">
+                <a data-role="button" href="#altadesarrollo" data-theme="a" data-icon="add">
                     Dinos que te preocupa
                 </a>
+                                <h4><center>o apoya a estos retos</center></h4>
+
                 <ul data-role="listview" data-divider-theme="b" data-inset="true">
-                    <li data-role="list-divider" role="heading">
-                        Apoya a los retos que te preocupan
-                    </li>
-                   
+                                    
                    
                    <?php
                    
@@ -447,13 +486,13 @@ include("dbconnect.php");
                         </div>
                     </div>
                                     </div>
-                <a data-role="button" href="#altasocial">
+                <a data-role="button" href="#altasocial" data-theme="a" data-icon="add">
                     Dinos que te preocupa
                 </a>
+                                <h4><center>o apoya a estos retos</center></h4>
+
                 <ul data-role="listview" data-divider-theme="b" data-inset="true">
-                    <li data-role="list-divider" role="heading">
-                        Apoya a los retos que te preocupan
-                    </li>
+                    
                    
                    
                    <?php
@@ -545,14 +584,13 @@ include("dbconnect.php");
                         </div>
                     </div>
                                     </div>
-                <a data-role="button" href="#altaeducacion">
+                <a data-role="button" href="#altaeducacion" data-theme="a" data-icon="add">
                     Dinos que te preocupa
                 </a>
+                                <h4><center>o apoya a estos retos</center></h4>
+
                 <ul data-role="listview" data-divider-theme="b" data-inset="true">
-                    <li data-role="list-divider" role="heading">
-                        Apoya a los retos que te preocupan
-                    </li>
-                   
+                                      
                    
                    <?php
                    
@@ -643,13 +681,13 @@ include("dbconnect.php");
                         </div>
                     </div>
                                     </div>
-                <a data-role="button" href="#altamedioambiente">
+                <a data-role="button" href="#altamedioambiente" data-theme="a" data-icon="add">
                     Dinos que te preocupa
                 </a>
+                                <h4><center>o apoya a estos retos</center></h4>
+
                 <ul data-role="listview" data-divider-theme="b" data-inset="true">
-                    <li data-role="list-divider" role="heading">
-                        Apoya a los retos que te preocupan
-                    </li>
+                   
                    
                    
                    <?php
