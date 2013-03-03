@@ -1,5 +1,5 @@
 <?php
-include("dbconnect.php");
+include("include/dbconnect.php");
 
 
 $sSQL = "update problemas set apoyos = apoyos +1 where id = " . $_GET['id'];
@@ -46,7 +46,7 @@ EjecutaSQL($sSQL);
     <div data-role="content">
         
         <div style="">
-            <img style="width: 100%; height: 60%" src="gracias<?php echo rand(1,7);?>.jpg">
+            <img style="width: 100%; height: 60%" src="img/gracias<?php echo rand(1,7);?>.jpg">
         </div>
        
        

@@ -14,3 +14,6 @@ Requiere una base de datos mysql con una tabla:
 >  PRIMARY KEY (`id`),
 >  KEY `id` (`id`)
 > )
+
+En el fichero include/dbconnect hay que configurar los parámetros de conexion a la base de datos
+En ese mismo fichero hay que incluir el api key de google static maps

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <?php
-include("dbconnect.php");
+include("include/dbconnect.php");
 $con = mysql_query("select * from problemas");
 $markas = "";
 while($row=mysql_fetch_array($con))
@@ -77,7 +77,7 @@ if ($row['categoria']=="social")
            function muestra(objeto)
            {
             
-            document.getElementById("mapa").innerHTML = "<img src='https://maps.googleapis.com/maps/api/staticmap?center=" + objeto.coords.latitude + "," + objeto.coords.longitude + "&amp;zoom=3&amp;size=288x120<?php echo $markas ?>&amp;sensor=false&amp;key=AIzaSyBmH76Ojg_3oiRAJaIx6EMk0hW57LyaBWM' width='288' height='120'  />";
+            document.getElementById("mapa").innerHTML = "<img src='https://maps.googleapis.com/maps/api/staticmap?center=" + objeto.coords.latitude + "," + objeto.coords.longitude + "&amp;zoom=3&amp;size=288x120<?php echo $markas ?>&amp;sensor=false&amp;key=<?php echo $googlemapsapikey; ?>' width='288' height='120'  />";
            }
            
          </script>
@@ -91,33 +91,33 @@ if ($row['categoria']=="social")
                 <div style="">
                     <img style="width: 40%" src="https://www.flipover.org/assets/flipover_logo_header.png" />
                 </div>
-                <div id="mapa"><img src="https://maps.googleapis.com/maps/api/staticmap?center=Bilbao, Spain&amp;zoom=3&amp;size=288x120&amp;markers=Madison, WI&amp;sensor=false&amp;key=AIzaSyBmH76Ojg_3oiRAJaIx6EMk0hW57LyaBWM" width="288" height="120" /></div>
+                <div id="mapa"><img src="https://maps.googleapis.com/maps/api/staticmap?center=Bilbao, Spain&amp;zoom=3&amp;size=288x120<?php echo $markas ?>&amp;sensor=false&amp;key=<?php echo $googlemapsapikey; ?>" width="288" height="120" /></div>
                 <ul data-role="listview" data-divider-theme="b" data-inset="true">
                     
                    <li data-theme="c">
                         <a href="#social" data-transition="slide">
-                            <img src="social.png" alt="" />
+                            <img src="img/social.png" alt="" />
                             <h2>Social</h2>
                             <p>Mejora tu sociedad</p>
                         </a>
                     </li>
                     <li data-theme="c">
                         <a href="#animales" data-transition="slide">
-                        	<img src="animales.png" alt="" />
+                        	<img src="img/animales.png" alt="" />
                             <h2>Protección animal</h2>
                             <p>Denuncia el maltrato animal</p>
                         </a>
                     </li>
                     <li data-theme="c">
                         <a href="#educacion" data-transition="slide">
-                        <img src="educacion.png" alt="" />
+                        <img src="img/educacion.png" alt="" />
                         <h2>Educación</h2>
                         <p>Construye un futuro mejor</p>
                         </a>
                     </li>
                      <li data-theme="c">
                         <a href="#desarrollo" data-transition="slide">
-                        <img src="desarrollo.png" alt="" />
+                        <img src="img/desarrollo.png" alt="" />
                            <h2>
                            	Desarrollo
                            </h2>
@@ -126,13 +126,13 @@ if ($row['categoria']=="social")
                     </li>
                      <li data-theme="c">
                         <a href="#medioambiente" data-transition="slide">
-                        <img src="medioambiente.png" alt="" />
+                        <img src="img/medioambiente.png" alt="" />
                         <h2>Medio Ambiente</h2>
                          <p>Protege el medio ambiente</p>
                         </a>
                     </li>
 <li data-theme="c"><a href="#salud" data-transition="slide">
-                        <img src="salud.png" alt="" />
+                        <img src="img/salud.png" alt="" />
                         <h2>Salud</h2>
                          <p>¿Qué te gustaría sanar?</p>
                         </a>
@@ -161,7 +161,7 @@ if ($row['categoria']=="social")
                             	<tr>
                             		<td align="left" width="40 %"><img src="https://www.flipover.org/assets/flipover_logo_header.png" alt="" /> </td>
                             		<td width="30 %">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                            		<td align="right" width="30 %"><img src="salud.png" alt="" /> </td>
+                            		<td align="right" width="30 %"><img src="img/salud.png" alt="" /> </td>
                             	</tr>
                             </table> 
                         </div>
@@ -197,7 +197,7 @@ if ($row['categoria']=="social")
             <div class="ui-grid-a">
                     <div class="ui-block-a">
                         <div style=" text-align:center">
-                            <img style="width: 50%" src="salud.png" />
+                            <img style="width: 50%" src="img/salud.png" />
                         </div>
                     </div>
                     <div class="ui-block-b">
@@ -256,7 +256,7 @@ if ($row['categoria']=="social")
         echo '        <h2>';
         echo utf8_encode($row['titulo']);
         echo'                </h2>';
-        echo '        <img src="https://maps.googleapis.com/maps/api/staticmap?center=' . $row['localizacion'] . '&amp;zoom=12&amp;size=288x100&amp;markers=' . $row['localizacion'] . '&amp;sensor=false&amp;key=AIzaSyBmH76Ojg_3oiRAJaIx6EMk0hW57LyaBWM" width="288" height="100" />';
+        echo '        <img src="https://maps.googleapis.com/maps/api/staticmap?center=' . $row['localizacion'] . '&amp;zoom=12&amp;size=288x100&amp;markers=' . $row['localizacion'] . '&amp;sensor=false&amp;key=' . $googlemapsapikey . '" width="288" height="100" />';
         echo'        <h3>                    Descripción                </h3>';
         echo '<p>' . utf8_encode($row['problema']) . '</p>';
         echo '<small>A ' . $row['apoyos'] . ' personas le importa este proyecto, ¿y a ti?</small>';
@@ -280,7 +280,7 @@ if ($row['categoria']=="social")
                             	<tr>
                             		<td align="left" width="40 %"><img src="https://www.flipover.org/assets/flipover_logo_header.png" alt="" /> </td>
                             		<td width="30 %">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                            		<td align="right" width="30 %"><img src="animales.png" alt="" /> </td>
+                            		<td align="right" width="30 %"><img src="img/animales.png" alt="" /> </td>
                             	</tr>
                             </table> 
                         </div>
@@ -317,7 +317,7 @@ if ($row['categoria']=="social")
             <div class="ui-grid-a">
                     <div class="ui-block-a">
                         <div style=" text-align:center">
-                            <img style="width: 50%" src="animales.png" />
+                            <img style="width: 50%" src="img/animales.png" />
                         </div>
                     </div>
                     <div class="ui-block-b">
@@ -385,7 +385,7 @@ if ($row['categoria']=="social")
                             	<tr>
                             		<td align="left" width="40 %"><img src="https://www.flipover.org/assets/flipover_logo_header.png" alt="" /> </td>
                             		<td width="30 %">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                            		<td align="right" width="30 %"><img src="desarrollo.png" alt="" /> </td>
+                            		<td align="right" width="30 %"><img src="img/desarrollo.png" alt="" /> </td>
                             	</tr>
                             </table> 
                         </div>
@@ -421,7 +421,7 @@ if ($row['categoria']=="social")
             <div class="ui-grid-a">
                     <div class="ui-block-a">
                         <div style=" text-align:center">
-                            <img style="width: 50%" src="desarrollo.png" />
+                            <img style="width: 50%" src="img/desarrollo.png" />
                         </div>
                     </div>
                     <div class="ui-block-b">
@@ -485,7 +485,7 @@ if ($row['categoria']=="social")
                             	<tr>
                             		<td align="left" width="40 %"><img src="https://www.flipover.org/assets/flipover_logo_header.png" alt="" /> </td>
                             		<td width="30 %">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                            		<td align="right" width="30 %"><img src="social.png" alt="" /> </td>
+                            		<td align="right" width="30 %"><img src="img/social.png" alt="" /> </td>
                             	</tr>
                             </table> 
                         </div>
@@ -522,7 +522,7 @@ if ($row['categoria']=="social")
             <div class="ui-grid-a">
                     <div class="ui-block-a">
                         <div style=" text-align:center">
-                            <img style="width: 50%" src="social.png" />
+                            <img style="width: 50%" src="img/social.png" />
                         </div>
                     </div>
                     <div class="ui-block-b">
@@ -583,7 +583,7 @@ if ($row['categoria']=="social")
                             	<tr>
                             		<td align="left" width="40 %"><img src="https://www.flipover.org/assets/flipover_logo_header.png" alt="" /> </td>
                             		<td width="30 %">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                            		<td align="right" width="30 %"><img src="educacion.png" alt="" /> </td>
+                            		<td align="right" width="30 %"><img src="img/educacion.png" alt="" /> </td>
                             	</tr>
                             </table> 
                         </div>
@@ -619,7 +619,7 @@ if ($row['categoria']=="social")
             <div class="ui-grid-a">
                     <div class="ui-block-a">
                         <div style=" text-align:center">
-                            <img style="width: 50%" src="educacion.png" />
+                            <img style="width: 50%" src="img/educacion.png" />
                         </div>
                     </div>
                     <div class="ui-block-b">
@@ -680,7 +680,7 @@ if ($row['categoria']=="social")
                             	<tr>
                             		<td align="left" width="40 %"><img src="https://www.flipover.org/assets/flipover_logo_header.png" alt="" /> </td>
                             		<td width="30 %">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                            		<td align="right" width="30 %"><img src="medioambiente.png" alt="" /> </td>
+                            		<td align="right" width="30 %"><img src="img/medioambiente.png" alt="" /> </td>
                             	</tr>
                             </table> 
                         </div>
@@ -717,7 +717,7 @@ if ($row['categoria']=="social")
             <div class="ui-grid-a">
                     <div class="ui-block-a">
                         <div style=" text-align:center">
-                            <img style="width: 50%" src="medioambiente.png" />
+                            <img style="width: 50%" src="img/medioambiente.png" />
                         </div>
                     </div>
                     <div class="ui-block-b">
